@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('https://img.freepik.com/free-vector/abstract-purple-background_698452-2618.jpg') no-repeat center center/cover;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+/* Overlay to enhance readability */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Subtle dark overlay */
+  z-index: -1;
+}
+
+/* Todo List Container */
+.container {
+  background: rgba(255, 255, 255, 0.85); /* Slight transparency */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  text-align: center;
+}
+
+/* Title */
+h1 {
+  color: rgb(179, 131, 226);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Form */
+form {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.input:focus {
+  border-color: rgb(179, 131, 226);
+  outline: none;
+  box-shadow: 0 0 5px rgba(179, 131, 226, 0.5);
+}
+
+.add-btn {
+  background: rgb(179, 131, 226);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background: rgb(150, 100, 200);
+}
+
+/* Todo List */
+.todos {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.todos li {
+  background: #fafafa;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todos li:hover {
+  background: #f0f0f0;
+}
+
+/* Completed Todos */
+.todos li.completed {
+  text-decoration: line-through;
+  color: #b6b6b6;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer Text */
+small {
+  display: block;
+  margin-top: 15px;
+  color: #777;
+}
